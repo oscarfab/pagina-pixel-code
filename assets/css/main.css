@@ -2950,3 +2950,43 @@ section,
   margin-top: 10px;
   font-size: 1.2rem;
 }
+
+/* ✨ lo nuevo bonito */
+.stats h2 {
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
+.stats-item {
+  padding: 20px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.03);
+  transition: 0.3s;
+}
+
+.stats-item:hover {
+  transform: translateY(-5px);
+  background: rgba(0,255,180,0.05);
+}
+
+.stats-item h3 {
+  font-size: 1.4rem;
+  color: #00ffb4;
+}
+
+.stats-item p {
+  color: #aaa;
+  font-size: 0.95rem;
+}
+.stats-video {
+  border-radius: 16px;
+  object-fit: cover;
+  max-height: 350px;
+
+  filter: brightness(0.9) contrast(1.1);
+  transition: 0.4s;
+}
+
+.stats-video:hover {
+  transform: scale(1.02);
+}

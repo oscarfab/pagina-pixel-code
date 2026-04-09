@@ -254,7 +254,16 @@ window.addEventListener("load", () => {
   tl.to(".text2", { opacity: 0, y: -100, duration: 1 });
 
   tl.to(".text3", { opacity: 1, y: 0, duration: 1.5 });
-// 🧠 después del texto 3
+
+});
+gsap.to(".logo-scroll img", {
+  y: "+=12",
+  duration: 4,
+  ease: "sine.inOut",
+  repeat: -1,
+  yoyo: true
+});
+/// 🧠 después del texto 3
 
 // Desaparece último texto
 tl.to(".text3", {
@@ -276,31 +285,6 @@ tl.to(".fade-screen", {
 tl.to({}, { duration: 0.5 });
 
 // 💎 APARECE BRAND (minimalista)
-tl.to(".final-brand", {
-  opacity: 1,
-  y: 0,
-  duration: 2,
-  ease: "power3.out"
-
-});
-gsap.to(".logo-scroll img", {
-  y: "+=12",
-  duration: 4,
-  ease: "sine.inOut",
-  repeat: -1,
-  yoyo: true
-});
-// TEXTO 3 (último mensaje)
-tl.to(".text3", {
-  opacity: 1,
-  y: 0,
-  duration: 1.2
-});
-
-// 👉 pequeño delay para que se sienta cinematic
-tl.to({}, { duration: 1 });
-
-// 🔥 APARECE BRAND FINAL (como el barco)
 tl.to(".final-brand", {
   opacity: 1,
   y: 0,
