@@ -2837,3 +2837,116 @@ section,
   color: color-mix(in srgb, var(--default-color), transparent 60%);
   font-size: 14px;
 }
+
+/* ===== ULTRA PRO HERO ===== */
+.hero-scroll {
+  height: 100vh;
+  background: radial-gradient(circle at center, #0f172a, #020617);
+  overflow: hidden;
+  position: relative;
+}
+.logo-scroll {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-scroll img {
+  width: 70%;   /* 👈 aquí el tamaño */
+  max-width: 700px;
+  height: auto;
+  object-fit: contain;
+  opacity: 0.95;
+
+  /* ✨ glow bonito */
+  filter: drop-shadow(0 0 25px rgba(0, 255, 180, 0.6))
+          drop-shadow(0 0 50px rgba(0, 255, 180, 0.3));
+}
+
+/* LUZ CINEMATIC */
+.cinematic-light {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0,255,200,0.15), transparent 60%);
+  top: -50%;
+  left: -50%;
+  animation: rotateLight 20s linear infinite;
+}
+
+@keyframes rotateLight {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* TEXTOS */
+.wave-text {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  font-size: 2.2rem;
+  color: white;
+  opacity: 0;
+  transform: translateY(120px);
+  padding: 0 40px;
+  letter-spacing: 1px;
+}
+
+.text1 { top: 35%; }
+.text2 { top: 50%; }
+.text3 { top: 65%; }
+.final-brand {
+  position: absolute;
+  bottom: 15%; /* 👈 aparece abajo como en el video */
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.final-brand h1 {
+  font-size: 3rem;
+  color: white;
+  letter-spacing: 3px;
+}
+
+.final-brand p {
+  color: #9ca3af;
+  font-size: 1.2rem;
+}
+.fade-screen {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* BRAND FINAL CENTRADO (estilo Apple) */
+.final-brand {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 40px);
+  text-align: center;
+  opacity: 0;
+  z-index: 10;
+}
+
+.final-brand h1 {
+  font-size: 3.5rem;
+  color: white;
+  letter-spacing: 4px;
+  font-weight: 600;
+}
+
+.final-brand p {
+  color: #aaa;
+  margin-top: 10px;
+  font-size: 1.2rem;
+}

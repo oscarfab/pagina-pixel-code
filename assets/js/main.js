@@ -62,11 +62,9 @@
    * Preloader
    */
   const preloader = document.querySelector('#preloader');
-  if (preloader) {
-    window.addEventListener('load', () => {
-      preloader.remove();
-    });
-  }
+ if (preloader) {
+  preloader.remove();
+}
 
   /**
    * Scroll top button
@@ -214,5 +212,100 @@
   }
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
+// ===== ULTRA PRO LIMPIO =====
+
+window.addEventListener("load", () => {
+
+  const tl = gsap.timeline();
+
+  tl.fromTo(".logo-scroll img",
+    {
+      scale: 2,
+      opacity: 0,
+      filter: "blur(30px)"
+    },
+    {
+      scale: 1,
+      opacity: 1,
+      filter: "blur(0px)",
+      duration: 2.5,
+      ease: "power4.out"
+    }
+  );
+
+  gsap.to(".logo-scroll img", {
+    y: "+=40",
+    duration: 5,
+    ease: "sine.inOut",
+    repeat: -1,
+    yoyo: true
+  });
+
+  tl.to(".logo-scroll img", {
+    scale: 1.6,
+    duration: 6,
+    ease: "power1.inOut"
+  });
+
+  tl.to(".text1", { opacity: 1, y: 0, duration: 1.2 });
+  tl.to(".text1", { opacity: 0, y: -100, duration: 1 });
+
+  tl.to(".text2", { opacity: 1, y: 0, duration: 1.2 });
+  tl.to(".text2", { opacity: 0, y: -100, duration: 1 });
+
+  tl.to(".text3", { opacity: 1, y: 0, duration: 1.5 });
+// 🧠 después del texto 3
+
+// Desaparece último texto
+tl.to(".text3", {
+  opacity: 0,
+  duration: 1
+});
+
+// 🎥 PAUSA CINEMATIC
+tl.to({}, { duration: 0.8 });
+
+// 🌫️ FADE A NEGRO (Apple style)
+tl.to(".fade-screen", {
+  opacity: 1,
+  duration: 2,
+  ease: "power2.inOut"
+});
+
+// 🎬 PEQUEÑA PAUSA (impacto)
+tl.to({}, { duration: 0.5 });
+
+// 💎 APARECE BRAND (minimalista)
+tl.to(".final-brand", {
+  opacity: 1,
+  y: 0,
+  duration: 2,
+  ease: "power3.out"
+
+});
+gsap.to(".logo-scroll img", {
+  y: "+=12",
+  duration: 4,
+  ease: "sine.inOut",
+  repeat: -1,
+  yoyo: true
+});
+// TEXTO 3 (último mensaje)
+tl.to(".text3", {
+  opacity: 1,
+  y: 0,
+  duration: 1.2
+});
+
+// 👉 pequeño delay para que se sienta cinematic
+tl.to({}, { duration: 1 });
+
+// 🔥 APARECE BRAND FINAL (como el barco)
+tl.to(".final-brand", {
+  opacity: 1,
+  y: 0,
+  duration: 2,
+  ease: "power3.out"
+});
 
 })();
